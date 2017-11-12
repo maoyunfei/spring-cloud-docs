@@ -64,7 +64,7 @@ Spring Cloud Netflix现在支持使用properties来定制Ribbon client，以便�
 * `NIWSServerListClassName`: should implement `ServerList`
 * `NIWSServerListFilterClassName`: should implement `ServerListFilter`
 
-**提示：**在这些属性中定义的类优先于使用`@RibbonClient(configuration=MyRibbonConfig.class)`定义的bean和Spring Cloud Netflix提供的默认类。
+**提示：** 在这些属性中定义的类优先于使用`@RibbonClient(configuration=MyRibbonConfig.class)`定义的bean和Spring Cloud Netflix提供的默认类。
 
 要为一个名为`users`的服务设置`IRule`，可以如下设置：
 
@@ -76,7 +76,7 @@ users:
 ## 4. Ribbon和Eureka一起使用
 当Eureka和Ribbon一起使用(例如，二者都在classpath), `ribbonServerList`被`DiscoveryEnabledNIWSServerList`的一个扩展覆盖了，该扩展的server list来自于Eureka。同时用`NIWSDiscoveryPing`替代`IPing`,通过Eureka来判断服务状态是否为UP。默认安装的ServerList是一个DomainExtractingServerList，这样做的目的是在不使用AWS AMI metadata(这是Netflix所依赖的)的情况下为负载均衡器提供物理metadata。默认情况下，server list将使用实例metadata中提供的“zone”信息构建（所以在远程客户端上设置`eureka.instance.metadataMap.zone`）,如果没有设置zone，可以使用服务器hostname的域名作为zone的代理（如果设置了标志`approximateZoneFromHostname`）。一旦zone信息可用，就可以在`ServerListFilter`中使用。默认情况下，它将用于定位与client位于同一个zone的server，因为默认值是`ZonePreferenceServerListFilter`。默认地client的zone的确定方式与远程实例相同，即通过`eureka.instance.metadataMap.zone`。
 
-**提示：**如果没有设置zone数据，则根据client配置（而不是实例配置）进行猜测。我们把`eureka.client.availabilityZones`(这是一个从region名称到zone列表的map)，并取出实例所在region的第一个zone（即`eureka.client.region`，默认为“us-east-1“，为了与本地Netflix的兼容性）。
+**提示：** 如果没有设置zone数据，则根据client配置（而不是实例配置）进行猜测。我们把`eureka.client.availabilityZones`(这是一个从region名称到zone列表的map)，并取出实例所在region的第一个zone（即`eureka.client.region`，默认为“us-east-1“，为了与本地Netflix的兼容性）。
 
 ## 5. Ribbon不和Eureka一起使用
 Eureka是一个远程服务发现的一个简便实现，所以你不需要在client端硬编码url，但是如果你不喜欢使用eureka，Ribbon和Feign仍然很合适。假设你已经为“stores”声明了@RibbonClient, 并且没有使用eureka。Ribbon client默认使用一个配置的server list,你可以像这样提供配置：
