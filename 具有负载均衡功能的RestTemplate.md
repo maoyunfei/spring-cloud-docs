@@ -13,7 +13,7 @@ public class MyConfiguration {
     }
 }
 ```
-**提示：**从Spring Boot 1.4开始不再提供自动配置的RestTemplate Bean,你必须自己创建。
+**提示：** 从Spring Boot 1.4开始不再提供自动配置的RestTemplate Bean,你必须自己创建。
 
 ## Retrying Failed Requests
 RestTemplatede的失败重试,默认是不可用的，如果需要开启，需要设置`spring.cloud.loadbalancer.retry.enabled=true`并且添加Spring Retry依赖。
