@@ -207,7 +207,7 @@ public class FooConfiguration {
 }
 ```
 
-**警告：** 在Spring Cloud Dalston发布之前，如果Hystrix在classpath上，Feign默认情况下会将所有方法封装在断路器中。 Spring Cloud Dalston改变了这种默认行为，赞成采用选择加入的方式。(备注：Dalston前的版本中 feign.hystrix.enabled 默认值为true，Dalston及其之后的版本中 feign.hystrix.enabled 默认值为false)
+**警告：** 在Spring Cloud Dalston发布之前，如果Hystrix在classpath上(备注：pom.xml中有spring-cloud-starter-hystrix依赖)，Feign默认情况下会将所有方法封装在断路器中。 Spring Cloud Dalston改变了这种默认行为，赞成采用选择加入的方式。(备注：Dalston前的版本中 feign.hystrix.enabled 默认值为true，Dalston及其之后的版本中 feign.hystrix.enabled 默认值为false)
 
 ## 1.5 Feign Hystrix Fallbacks
 Hystrix支持fallback的概念：一个默认的代码路径，在断路或出现错误时执行。为给定的`@FeignClient`启用fallback功能，将`fallback`属性设置为实现fallback的类名称。你还需要将你的实现声明为Spring bean。
