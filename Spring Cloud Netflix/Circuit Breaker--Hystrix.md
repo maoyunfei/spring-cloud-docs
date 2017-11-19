@@ -99,7 +99,7 @@ Hystrix的主要优点之一就是它收集的关于每个HystrixCommand的指�
 
 当使用Hystrix命令包装Ribbon client，你需要确保配置的Hystrix超时时间大于配置的Ribbon超时时间，包括任何潜在的重试。例如，如果你的ribbon连接超时是1秒，ribbon client可能重试3次，然后Hystrix超时应该略大于3秒。
 
-# 3.1 如何引入Hystrix Dashboard
+## 3.1 如何引入Hystrix Dashboard
 
 ```
 <dependency>
