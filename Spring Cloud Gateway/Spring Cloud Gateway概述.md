@@ -6,25 +6,25 @@ Spring Cloud Gateway项目提供了一个构建在Spring生态之上的API网关
 
 目前最新的Spring Cloud Gateway版本是2.0.0.M9。
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_1.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_1.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 下面将按照包的顺序介绍主要类的功能和特点。
 
 ### (一) 'actuate' package
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_2.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_2.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 * **`GatewayControllerEndpoint`**: 提供查询、管理网关路由、过滤器等信息的API端点。使用了Spring Boot 2.0的`@RestControllerEndpoint`注解。
 
 ### (二) 'config' package
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_3.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_3.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 Spring Cloud Gateway自动配置相关的类。
 
 四个自动配置类的初始化顺序如下：
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_10.png?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_10.png?raw=true"  width = "70%" height = "70%" align=center />
 
 * **`GatewayClassPathWarningAutoConfiguration`**：Spring Cloud Gateway 2.x 基于 Spring WebFlux 实现。用于检查项目是否正确导入`spring-boot-starter-webflux`依赖，而不是错误导入`spring-boot-starter-web`依赖。
 * **`GatewayLoadBalancerClientAutoConfiguration`**：实例化`LoadBalancerClientFilter`。
@@ -47,20 +47,20 @@ Spring Cloud Gateway自动配置相关的类。
 
 ### (三) 'discovery' package
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_4.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_4.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 * **`DiscoveryClientRouteDefinitionLocator`**：基于服务发现的路由定义。
 * **`GatewayDiscoveryClientAutoConfiguration`**：实例化`DiscoveryClientRouteDefinitionLocator`。
 
 ### (四) 'event' package
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_5.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_5.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 事件消息定义。
 
 ### (五) 'filter' package
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_6.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_6.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 各种全局过滤器和过滤器工厂类。
 
@@ -77,7 +77,7 @@ Spring Cloud Gateway自动配置相关的类。
 
 ### (六) 'handler' package
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_7.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_7.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 * 内置路由断言工厂：
 	* `AfterRoutePredicateFactory`
@@ -96,17 +96,17 @@ Spring Cloud Gateway自动配置相关的类。
 
 Spring Cloud Gateway工作流程如下：
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_12.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_12.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 ### (七) 'route' package
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_8.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_8.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 Route、RouteDefinition、RouteLocator、RouteDefinitionLocator、RouteLocatorBuilder等类的定义。
 
 ### (八) 'support' package
 
-![](https://github.com/maoyunfei/static-sources/blob/master/gateway_9.jpeg?raw=true)
+<img src="https://github.com/maoyunfei/static-sources/blob/master/gateway_9.jpeg?raw=true"  width = "70%" height = "70%" align=center />
 
 一些工具类的定义。
 
